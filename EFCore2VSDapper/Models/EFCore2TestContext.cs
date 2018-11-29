@@ -15,7 +15,7 @@ namespace EFCore2VSDapper.Models
             if (!optionsBuilder.IsConfigured)
             {
                 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Server=192.168.112.64\SQLEXPRESS;Database=NowMobileRepTest;User Id=sa;Password=Now12345;Trusted_Connection=false;");
+                optionsBuilder.UseSqlServer(@"Server=192.168.112.20\SQLEXPRESS;Database=DbName;User Id=sa;Password=Password;Trusted_Connection=false;");
             }
         }
 

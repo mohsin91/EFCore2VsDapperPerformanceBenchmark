@@ -9,16 +9,22 @@ namespace EFCore2VSDapper
     {
         EFRepository _EFRepo;
         DapperRepository _DapperRepo;
+        ADORepository _adoRepository;
+
         public EFCore2VsDapper()
         {
             _EFRepo = new EFRepository();
             _DapperRepo = new DapperRepository();
+            _adoRepository = new ADORepository();
         }
 
         [Benchmark]
-        public List<UsersGeneral> GetProductsWithEntityFramework() => _EFRepo.GetAllProductsByCategory(10);
+        public List<UsersGeneral> GetUsersWithEntityFramework() => _EFRepo.GetUsersWithEF();
 
         [Benchmark]
-        public List<UsersGeneral> GetProductsWithDapper() => _DapperRepo.GetAllProductsByCategory(10);
+        public List<UsersGeneral> GetUsersWithDapper() => _DapperRepo.GetUsersWithDapper();
+
+        //[Benchmark]
+        //public List<UsersGeneral> GetUsersWithADO() => _adoRepository.GetUsersWithADO();
     }
 }

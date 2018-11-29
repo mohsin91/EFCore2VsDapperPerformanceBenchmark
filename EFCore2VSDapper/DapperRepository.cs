@@ -13,9 +13,9 @@ namespace EFCore2VSDapper
 {
     public class DapperRepository
     {
-        public List<UsersGeneral> GetAllProductsByCategory(int categoryId)
+        public List<UsersGeneral> GetUsersWithDapper()
         {
-            using (IDbConnection db = new SqlConnection(@"Server=192.168.112.64\SQLEXPRESS;Database=NowMobileRepTest;User Id=sa;Password=Now12345;Trusted_Connection=false;"))
+            using (IDbConnection db = new SqlConnection(@"Server=192.168.112.20\SQLEXPRESS;Database=DBNAME;User Id=sa;Password=Password;Trusted_Connection=false;"))
             {
                 return db.Query<UsersGeneral>
                 ($"select top 5000 * from users_general").ToList();

@@ -10,11 +10,12 @@ namespace EFCore2VSDapper
 {
     public class EFRepository
     {
-        public List<UsersGeneral> GetAllProductsByCategory(int categoryId)
+        public List<UsersGeneral> GetUsersWithEF()
         {
             using (var db = new EFCore2TestContext())
             {
                 return db.UsersGeneral.FromSql("Select top 5000 * from users_general").AsNoTracking().ToList();
+                //return db.UsersGeneral.Take(5000).AsNoTracking().ToList();
             }
         }
     }
